@@ -13,7 +13,7 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 fun Application.module(testing: Boolean = false) {
     routing {
         get("/hello") {
-            call.respondText("Hello World sa")
+            call.respondText("Hello World s")
         }
     }
 }
