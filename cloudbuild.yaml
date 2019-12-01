@@ -14,7 +14,7 @@ steps:
     args:
       - -exc
       - |
-        git clone --depth 1 -b master https://tigerfdev:$$PASSWORD@github.com/tigerfdev/ci-test-release.git
+        git clone --depth 1 -b cloudbuild https://tigerfdev:$$PASSWORD@github.com/tigerfdev/ci-test-release.git
         cd ci-test-release
         git config --global user.name "concourse"
         git config --global user.email "concourse@no.reply"
@@ -25,7 +25,7 @@ steps:
         else
           echo "No changes to commit. skipping"
         fi
-        git push origin master
+        git push origin cloudbuild
     secretEnv: [PASSWORD]
 secrets:
   - kmsKeyName: projects/citest1/locations/global/keyRings/citest/cryptoKeys/git-key

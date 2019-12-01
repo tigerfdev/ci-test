@@ -15,7 +15,7 @@ var date = LocalDateTime.now()
 fun Application.module(testing: Boolean = false) {
     routing {
         get("/") {
-            call.respondText("Hello World $date")
+            call.respondText("Hello World citest $date")
         }
     }
 }
