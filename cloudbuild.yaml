@@ -16,8 +16,8 @@ steps:
       - |
         git clone --depth 1 -b cloudbuild https://tigerfdev:$$PASSWORD@github.com/tigerfdev/ci-test-release.git
         cd ci-test-release
-        git config --global user.name "concourse"
-        git config --global user.email "concourse@no.reply"
+        git config --global user.name "cloudbuild"
+        git config --global user.email "cloudbuild@no.reply"
         sed -i -e "s/digest: .*$/digest: $(cat ../digest)/" manifests/citest/kustomize/overlays/cloudbuild/kustomization.yaml
         git add ./manifests/citest/kustomize/overlays/cloudbuild/kustomization.yaml
         if ! git diff-index --quiet HEAD --; then
