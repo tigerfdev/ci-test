@@ -8,8 +8,6 @@ COPY . $APP_HOME
 RUN gradle build
 
 FROM openjdk:11-jre-slim
-ENV HOTBOX=/root
-WORKDIR $HOTBOX
 
 COPY --from=build-stage /root/dev/app/build/libs/* ./
 
