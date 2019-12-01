@@ -6,6 +6,6 @@ workflows:
     jobs:
       - gcp-gcr/build-and-push-image:
           path: citest
-          image: citest1/web/citest
+          image: web/citest
           registry-url: gcr.io
           tag: circleci
