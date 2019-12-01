@@ -4,8 +4,12 @@ ENV APP_HOME=/root/dev/app/
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
-COPY . $APP_HOME
-RUN gradle build
+COPY *.gradle gradle.* $APP_HOME
+RUN gradle --version
+
+COPY src $APP_HOME/src
+COPY resources $APP_HOME/resources
+RUN gradle --no-daemon build
 
 FROM openjdk:11-jre-slim
 
