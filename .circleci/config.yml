@@ -8,4 +8,4 @@ workflows:
           context: citest
           image: citest1/web/citest:cloudbuild
           registry-url: gcr.io
-          target-tag: circleci
+          tag: circleci
