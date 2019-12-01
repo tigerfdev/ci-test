@@ -9,7 +9,7 @@ steps:
         docker push gcr.io/citest1/web/citest:cloudbuild
         docker images --format "{{.Digest}}" gcr.io/citest1/web/citest > digest
   - name: gcr.io/cloud-builders/git
-    id: Copy to production branch
+    id: manifest-updete
     entrypoint: /bin/sh
     args:
       - -exc
